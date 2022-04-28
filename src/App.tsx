@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
-import OnOff from "./components/OnOff/OnOff";
 
 function App() {
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+
+
     return (
         <div className="App">
-            <OnOff />
+            {/*<OnOff />*/}
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            {/*<Accordion titleValue={} collapsed={}/>*/}
             {/*<PageTitle title={"this is app"}/>*/}
             {/*<Rating value={1}/>*/}
             {/*<Rating value={4}/>*/}
